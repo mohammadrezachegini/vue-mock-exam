@@ -11,7 +11,7 @@
                 {{ ct }}
             </li>
         </ul>
-        <button >Remove </button>
+        <!-- <button >Remove </button> -->
     </div>
 </template>
 

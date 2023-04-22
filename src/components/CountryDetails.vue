@@ -4,22 +4,33 @@
         <ul>
             <li>Name: {{ countryDetail.name }}</li>
              <li>Population: {{ countryDetail.population }}</li>
+             <li v-for="(item, index) of countryDetail.hobbies" :key="index">{{ item }}</li>
+
         </ul>
         <button @click="closeDeatil" >Close </button>
-        <button @click="handleAddButton">Add to cart</button>
-        <button @click="handleRemoveButton">Remove to cart</button>
+        <!-- <button @click="handleAddButton">Add to cart</button> -->
+        <!-- <button @click="handleRemoveButton">Remove to cart</button> -->
+        <add-cart :AddCart="handleAddButton"></add-cart>
+        <remove-cart :RemoveCart="handleRemoveButton"></remove-cart>    
         <shopping-list v-if="!showComponent" :chosenCountry="chosenCountry" ></shopping-list>
+        
 
     </div>
 </template>
 
 <script>
     import ShoppingList from './ShoppingList.vue';
+    import AddCart from './AddCart.vue';
+    import RemoveCart from './RemoveCart.vue';
+
+
 
     export default{
         name: "CountryDetails",
         components:{
-            ShoppingList
+            ShoppingList,
+            RemoveCart,
+            AddCart
         },
         props:{
             countryDetail: Object
@@ -42,8 +53,13 @@
             },
             handleRemoveButton(event){
                 event.preventDefault();
-                this.chosenCountry.pop();
+                // this.chosenCountry.pop();
                 this.showComponent = false;
+
+                const itemIndex = this.chosenCountry.indexOf(this.countryDetail['name']);
+                this.chosenCountry.splice(itemIndex, 1);
+
+
             }
         },
 

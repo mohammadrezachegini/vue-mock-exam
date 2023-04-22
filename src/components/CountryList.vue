@@ -29,7 +29,8 @@
                 chosenCountry: {},
                 countryDetail: {
                     name: "",
-                    population:0
+                    population:0,
+                    hobbies:[],
                 },
                 showComponent:true
             }
@@ -45,12 +46,14 @@
             
             this.availableSections = [];
             this.chosenCountry = this.countries[event.target.id];
-            // console.log( this.countries[event.target.id])
             this.countryDetail =  {
                 name: this.chosenCountry['name'],
                 population: this.chosenCountry['population'],
+                hobbies: this.chosenCountry['hobbies']
             }
             console.log(this.countryDetail.population);
+            // console.log(this.countryDetail['hobbies']);
+
             this.showComponent = false
             
         

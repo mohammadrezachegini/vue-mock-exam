@@ -3,17 +3,20 @@
         {
             "id": 1,
             "name": "United States",
-            "population": 331142779
+            "population": 331142779,
+            "hobbies": ["reading1", "painting1", "playing guitar1"]
         },
         {
             "id": 2,
             "name": "Spain",
-            "population": 47450795
+            "population": 47450795,
+            "hobbies": ["reading2", "painting2", "playing guitar2"]
         },
         {
             "id": 3,
             "name": "Japan",
-            "population": 125570000
+            "population": 125570000,
+            "hobbies": ["reading3", "painting3", "playing guitar3"]
         }
     ]
 }
