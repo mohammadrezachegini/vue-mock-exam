@@ -7,7 +7,9 @@
         </ul>
         <button @click="closeDeatil" >Close </button>
         <button @click="handleAddButton">Add to cart</button>
+        <button @click="handleRemoveButton">Remove to cart</button>
         <shopping-list v-if="!showComponent" :chosenCountry="chosenCountry" ></shopping-list>
+
     </div>
 </template>
 
@@ -36,6 +38,11 @@
             handleAddButton(event){
                 event.preventDefault();
                 this.chosenCountry.push(this.countryDetail['name']);
+                this.showComponent = false;
+            },
+            handleRemoveButton(event){
+                event.preventDefault();
+                this.chosenCountry.pop();
                 this.showComponent = false;
             }
         },

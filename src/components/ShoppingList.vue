@@ -11,7 +11,7 @@
                 {{ ct }}
             </li>
         </ul>
-        <!-- <button @click="closeDeatil" >Close </button> -->
+        <button >Remove </button>
     </div>
 </template>
 
@@ -26,9 +26,14 @@
         data(){
             return{
 
+                
             }
         },
         methods:{
+            // handleRemoveButtton(event){
+            //     event.preventDefault();
+            //     // this.chosenCountry.pop();
+            // }
 
         },
 
